@@ -1,9 +1,5 @@
 # Node.js
-- task: PublishPipelineArtifact@1
-  inputs:
-    targetPath: '$(Pipeline.Workspace)/dist'
-    artifact: 'marcus'
-    publishLocation: 'pipeline'
+
 # Build a general Node.js project with npm.
 # Add steps that analyze code, save build artifacts, deploy, and more:
 # https://docs.microsoft.com/azure/devops/pipelines/languages/javascript
@@ -24,3 +20,8 @@ steps:
     npm install
     npm run build
   displayName: 'npm install and build'
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Pipeline.Workspace)/dist'
+    artifact: 'marcus'
+    publishLocation: 'pipeline'
